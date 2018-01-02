@@ -1,0 +1,22 @@
+##Project Euler #16
+
+a = 2**1000
+
+num1 = 0
+num2 = 8
+b1 = 100
+b2 = 10
+y = []
+
+y.append(a % 10)
+
+while (a - num2 != 0):
+    num1 = (a % b1 - num2) / b2
+    y.append(num1)
+    num2 += (num1 * b2)
+    b2 = b1
+    b1 *= 10
+    
+print(y)
+
+print(sum(y))
