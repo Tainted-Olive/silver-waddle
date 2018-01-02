@@ -1,0 +1,89 @@
+##Create a program that asks the user to enter their name and age.  Print out a message addressed to them that tells
+##them the year they will turn 100 years old.  
+
+name = input("Please input your name:")
+age = input("Please enter your age:")
+flag = 0
+while(flag == 0):##Check to ensure age is actually entered as a number
+    try: a = int(age)
+    except (ValueError):
+        age = input("Please enter your age::")
+    else:
+        flag = 1
+
+cen_year = (100 - int(age)) + 2017
+
+print("Dear " ,name, ", you will turn 100 in the year " ,cen_year, ".")
+##print(name + " will be 100 years old in the year " + year)
+print("Good bye!")
+
+
+##Ask the user for a number.  Depending on whether the number is even or odd, print out
+##an appropriate message to the user.  Extra: If the number is a multiple of 4, print out
+##a different message.  Then, ask the user for two numbers: one to check and " number to divide
+##If the first divides evenly into the second, tell the user, if not, inform the user.
+
+num1 = input("Please enter a number:")
+
+flag = 0
+while(flag == 0):
+    try: a = int(num1)
+    except(ValueError):
+        num1 = input("Please enter a number:")
+    else:
+        flag = 1
+        
+if int(num1) % 4 == 0:
+    print("Your number is both even and a multiple of 4!")
+elif int(num1) % 2 == 0:
+    print("Your number is even!")
+elif int(num1) % 2 != 0:
+    print("Your number is odd!")
+    
+num2 = input("Please enter a second number:")
+
+flag = 0
+while(flag == 0):
+    try: a = int(num2)
+    except(ValueError):
+        num2 = input("Please enter a number:")
+    else:
+        flag = 1
+
+num1 = int(num1) / int(num2)
+if num1 % 1 == 0:
+    print("Your first number is a multiple of the second number!")
+else:
+    print("Your first number is not a multiple of the second number!")
+    
+print("Good Bye!")
+
+
+##Take the below list,
+
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+
+##and write a program that prints out all elements of the list that are less than 5.
+##Then, Instead of printing the elements one by one, make a new list that has all
+##the elements less than 5 from this list in it and print out this new list.
+##Afterwards, Ask the user for a number and return a list that contains only elements
+##from the original list a that are smaller than that number given by the user.
+
+num = input("Please enter a number:")
+flag = 0
+while(flag == 0):
+    try: x = int(num)
+    except(ValueError):
+        num = input("Please enter a number:")
+    else:
+        flag = 1
+        
+b = []
+for i in a:##for all elements "i" in list "a", if i < num, append.  Very different then looping through.
+    if i < int(num):
+        b.append(i) ##the list b is an empty list, so using append.(i) adds the current list element to the end of b
+    
+
+print(b)
+
+print("Goodbye")
