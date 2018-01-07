@@ -87,3 +87,41 @@ for i in a:##for all elements "i" in list "a", if i < num, append.  Very differe
 print(b)
 
 print("Goodbye")
+
+
+##Create a program that asks the user for a number and then prints out a list of all
+##the divisors of that number.
+
+num = input("Please enter a whole number:")
+
+flag = 0
+while(flag == 0):  ##catches non integer inputs, loops till an integer is entered
+    try: x = int(num)
+    except(ValueError):
+        num = input("Your input is not valid.\nPlease enter a whole number:")
+    else:
+        flag = 1
+
+if(int(num) == 0):          ##Handles zero case
+    print("Zero has no divisors")
+
+if(int(num) == 1):          ##Handles '1' case
+    print("[1]")
+
+if(int(num) >= 2):          ##Handles all other 'Positive' intergers
+    numList = []
+    maxDivisor = int(((int(num) / 2) + 1))
+    count = 2
+
+    numList.append(1)
+
+    while(count != maxDivisor):
+        remainder = (int(num) % count)
+        if(remainder == 0):
+            numList.append(count)
+        count += 1
+    
+    numList.append(int(num))
+    
+    print(numList)
+##Needs a means for handling negative integer input
